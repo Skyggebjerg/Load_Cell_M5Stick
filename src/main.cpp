@@ -72,15 +72,15 @@ int DISP_W = 240;
 int DISP_H = 135;
 
 // ─── Colour palette (16-bit RGB565) ─────────────────────────
-static const uint32_t COL_BG      = 0x0820;
-static const uint32_t COL_PANEL   = 0x1082;
-static const uint32_t COL_ACCENT  = 0x07FF;
-static const uint32_t COL_GREEN   = 0x07E0;
-static const uint32_t COL_YELLOW  = 0xFFE0;
+static const uint32_t COL_BG      = 0x0000; // Dark blue background. to have black background change to 0x0000
+static const uint32_t COL_PANEL   = 0x0000; 
+static const uint32_t COL_ACCENT  = 0xFFE0; //
+static const uint32_t COL_GREEN   = 0xFFE0;
+static const uint32_t COL_YELLOW  = 0xFFE0; //
 static const uint32_t COL_RED     = 0xF800;
 static const uint32_t COL_WHITE   = 0xFFFF;
-static const uint32_t COL_GREY    = 0x7BEF;
-static const uint32_t COL_DKGREY  = 0x39E7;
+static const uint32_t COL_GREY    = 0xFFE0;
+static const uint32_t COL_DKGREY  = 0xFFE0;
 
 // ─── NVS helpers ─────────────────────────────────────────────
 void loadCalibration() {
@@ -201,7 +201,7 @@ void drawScreen(float weightG, bool stable, bool calMode, const char* statusMsg)
         else
             snprintf(wbuf, sizeof(wbuf), "%.1f", weightG);
 
-        uint32_t wCol = (weightG < 1.0f) ? COL_DKGREY :
+        uint32_t wCol = (weightG < 1.0f) ? COL_RED :
                         useKg            ? COL_YELLOW  : COL_WHITE;
 
         canvas.setTextSize(4);
