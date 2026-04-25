@@ -28,8 +28,8 @@
 #define HX711_DOUT_PIN   33   // G33 – White wire  – DAT from HX711
 
 // ─── Calibration ────────────────────────────────────────────
-#define CAL_REFERENCE_G     1000.0f
-#define DEFAULT_CAL_FACTOR  696.0f
+#define CAL_REFERENCE_G     1000.0f // Reference weight in grams for calibration (e.g. 1000 g = 1 kg)
+#define DEFAULT_CAL_FACTOR  263.0f
 #define NVS_NAMESPACE       "scale"
 #define NVS_KEY_CAL         "cal_factor"
 
